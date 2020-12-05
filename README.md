@@ -38,7 +38,7 @@ To predict the units sold, five algorithms (**Linear Regression, Random Forest R
 
 **2. Removing base_price from original features** - Features used: store_id, sku_id, total_price, is_featured_sku, is_displayed_sku
 
-**3. Using original and new features** - Features used: store_id, sku_id, total_price, base_price, is_featured_sku, is_displayed_sku, price_diff, feat_disp, year dummy variables and month dummy variables
+**3. Using original and new features** - Features used: store_id, sku_id, total_price, base_price, is_featured_sku, is_displayed_sku, price_diff, feat_disp, one hot encoded variables for year and month
 
 **4. SKU-Store combination subsets using original features** 
 
@@ -47,3 +47,7 @@ To predict the units sold, five algorithms (**Linear Regression, Random Forest R
 **6. SKU-Store combination subsets using original and new features** 
 
 Submissions are made for the predictions of each algorithm-data subset combination and parameters are tuned to achieve the best score. 
+
+## Results
+
+My rank on the Public Leaderboard was **22 out of 13500+ participants**, with a score of 396.43606. On the Private Leaderboard my rank was 38 with a score of 457.48456
