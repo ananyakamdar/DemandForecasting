@@ -16,3 +16,34 @@ The data consists of sales records at 76 different stores for the past 3 years o
 * **units_sold (Target)** - Total Units sold for that week-store-sku combination
 
 The evaluation metric for this competition is **100*RMSLE** (Root Mean Squared Log Error).
+
+## Exploration of data and Feature Engineering
+
+Key takeaways:
+* Number of unique SKUs and stores is low, indicating a possibility of creating models particular to each SKU-store combination for better prediction
+* Correlation between Total price and Base price is extremely high, so one of them can be removed to avoid multicollinearity
+* Certain records have extremely high number of units sold
+
+New variables created:
+* **price_diff** - Difference between total_price and base_price
+* **feat_disp** - Sum of is_featured_sku and is_displayed_sku
+* **One Hot Encoding of the Year**
+* **One Hot Encoding of the Month**
+
+## Approach
+
+To predict the units sold, five algorithms (**Linear Regression, Random Forest Regression, XGBoost Regression, CatBoost Regression and Light GBM Regression**) were each used on different subsets of the data which are as follows:
+
+**1. Using original features** - Features used: store_id, sku_id, total_price, base_price, is_featured_sku, is_displayed_sku
+
+**2. Removing base_price from original features** - Features used: store_id, sku_id, total_price, is_featured_sku, is_displayed_sku
+
+**3. Using original and new features** - Features used: store_id, sku_id, total_price, base_price, is_featured_sku, is_displayed_sku, price_diff, feat_disp, year dummy variables and month dummy variables
+
+**4. SKU-Store combination subsets using original features** 
+
+**5. SKU-Store combination subsets using original features (except base_price)** 
+
+**6. SKU-Store combination subsets using original and new features** 
+
+Submissions are made for the predictions of each algorithm-data subset combination and parameters are tuned to achieve the best score. 
