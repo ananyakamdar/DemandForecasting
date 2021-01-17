@@ -1,5 +1,4 @@
 # Demand Forecasting
-
 I recently participated in [Analytics Vidhya's Demand Forecasting Hackathon](https://datahack.analyticsvidhya.com/contest/janatahack-demand-forecasting/) where the aim was to forecast the demand for every product-store combination accurately, given the historical sales and promotional information.
 
 ## Dataset description and Evaluation metric
